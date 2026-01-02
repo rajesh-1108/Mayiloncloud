@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Light mode */
+  background-color: #F9E7A5;
+
+  /* Dark mode support */
+  @apply text-gray-900 dark:bg-gray-900 dark:text-white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-menu {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-menu {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.dark .card {
+  background: #1f2933;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+/* BUTTONS */
+.btn {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+}
+
+.dark .btn-outline {
+  background: #111827;
+  color: #ffffff;
+  border-color: #374151;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+/* SOCIAL ICON */
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar-link {
+  @apply block px-3 py-2 rounded hover:bg-gray-200 font-medium dark:hover:bg-gray-700;
+}
+
+/* ANIMATIONS */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.sidebar-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.sidebar-link:hover {
+  background-color: #f1f5f9;
+}
+
+.sidebar-link.active {
+  background-color: #2563eb;
+  color: white;
+}
+.animate-float {
+  animation: floatUp 0.3s ease-out;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
