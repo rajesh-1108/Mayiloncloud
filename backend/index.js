@@ -8,6 +8,7 @@ const admin = require("./middleware/admin");
 const superadmin = require("./middleware/superadmin");
 
 const app = express();
+const PORT= process.env.PORT || 5000;
 
 /* ================= MIDDLEWARE ================= */
 const allowedOrigins = [
@@ -72,8 +73,8 @@ mongoose
   .catch((err) => console.error("❌ MongoDB error:", err));
 
 /* ================= SERVER ================= */
-app.listen(5000, () =>
-  console.log("🚀 Server running on http://localhost:5000")
-);
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
 
 
