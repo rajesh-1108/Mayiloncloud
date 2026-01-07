@@ -4,13 +4,13 @@
    BASE API CONFIG
 ================================ */
 
-export const API = "http://localhost:5000/api";
+export const API =import.meta.env.VITE_API_URL;
 
 /*
   IMAGE_BASE is used to load images served
   from backend /uploads folder
 */
-export const IMAGE_BASE = import.meta.env.VITE_API_URL ||"http://localhost:5000";
+export const IMAGE_BASE =  import.meta.env.VITE_API_URL.replace("/api", ""); ||"http://localhost:5000";
 
 /* ===============================
    COMMON FETCH HELPER (OPTIONAL)
