@@ -10,7 +10,7 @@ export const API = "http://localhost:5000/api";
   IMAGE_BASE is used to load images served
   from backend /uploads folder
 */
-export const IMAGE_BASE = "http://localhost:5000";
+export const IMAGE_BASE = import.meta.env.VITE_API_URL ||"http://localhost:5000";
 
 /* ===============================
    COMMON FETCH HELPER (OPTIONAL)
