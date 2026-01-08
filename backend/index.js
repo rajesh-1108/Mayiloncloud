@@ -31,7 +31,8 @@ app.use(
   })
 );
 
-app.options("*", cors()); // ✅ VERY IMPORTANT
+app.options("/*", cors());
+
 
 
 
