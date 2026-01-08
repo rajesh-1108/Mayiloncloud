@@ -15,7 +15,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:5175",
-  "https://yourdomain.com",
+  "https://mayiloncloud.netlify.app",
 ];
 
 app.use(
